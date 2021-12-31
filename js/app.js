@@ -1,6 +1,21 @@
+var url = window.location.href;
+//var swLocation = '/colombia/sw.js';
+var swLocation = '/twittor/sw.js';
+
+
 //registramos el serviceWorker
 if ( navigator.serviceWorker ) {
-    navigator.serviceWorker.register('/sw.js');
+
+if(url.includes('localhost')){
+swLocation = '/sw.js';
+
+} else{
+
+    
+}
+
+    //navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register(swLocation);
 }
 
 
@@ -21,9 +36,6 @@ var txtMensaje  = $('#txtMensaje');
 
 // El usuario, contiene el ID del héroe seleccionado
 var usuario;
-
-
-
 
 // ===== Codigo de la aplicación
 
